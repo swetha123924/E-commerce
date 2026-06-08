@@ -72,7 +72,7 @@ export default function ProductInfo() {
 
   const [selectedImg, setSelectedImg] = useState(0);
   const wishlisted = useSelector((state: RootState) =>
-    (state.wishlist as any)?.items?.some((p: { id: number }) => p.id === data.id) ?? false
+    (state.wishlist as any)?.items?.some((p: { id: number }) => p.id === product.id) ?? false
   );
   const [qty, setQty] = useState(1);
   const [addedFeedback, setAddedFeedback] = useState(false);
@@ -165,7 +165,7 @@ export default function ProductInfo() {
               )}
               {/* Wishlist */}
               <button
-                onClick={() => dispatch(toggleWishlist(data))}
+                onClick={() => dispatch(toggleWishlist(product))}
                 className={`absolute bottom-3 right-3 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all duration-200 ${wishlisted ? "bg-red-500 text-white scale-110" : "bg-white text-gray-400 hover:text-red-500"}`}
               >
                 <Heart className={`w-4 h-4 ${wishlisted ? "fill-white" : ""}`} />
