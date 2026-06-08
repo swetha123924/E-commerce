@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/login", element: <LoginPage /> },
-]);
+], { basename: "/E-commerce/" });
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
